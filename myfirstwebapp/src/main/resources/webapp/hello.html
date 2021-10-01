@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>[[${title}]]</title>
+    <link
+      rel="stylesheet"
+      th:href="${portal.assetUrl({'_path=styles.css'})}"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <nav>
+      <a th:href="${portal.pageUrl({'_path=/'})}">Main</a>
+      <a th:href="${portal.pageUrl({'_path=page'})}">Page</a>
+      <a th:href="${portal.pageUrl({'_path=page/subpage'})}">Subpage</a>
+    </nav>
+    <h1>[[${message}]]</h1>
+    <img th:src="${portal.assetUrl({'_path=html5logo.svg'})}"/>
+  </body>
+</html>
