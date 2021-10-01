@@ -15,5 +15,37 @@
     </nav>
     <h1>[[${message}]]</h1>
     <img th:src="${portal.assetUrl({'_path=html5logo.svg'})}"/>
+    <div>
+      <h1>testing URLs</h1>
+      <code>Page-relative: user/login.html<br>
+        Context-relative: /itemdetails?id=3 (context name in server will be added automatically)<br>
+        Server-relative: ~/billing/processInvoice (allows calling URLs in another context (= application) in the same server.<br>
+        Protocol-relative URLs: //code.jquery.com/jquery-2.0.3.min.js</code>
+      <h1>initial: http://localhost:8080/webapp/myfirstwebapp</h1>
+      <a href="http://www.thymeleaf.org">absolute</a>
+      <h3>http://www.thymeleaf.org</h3>
+      <a href="user/login.html">page-relative</a>
+      <h3>http://localhost:8080/webapp/user/login.html</h3>
+      <a href="/itemdetails?id=3">context-relative</a>
+      <h3>http://localhost:8080/itemdetails?id=3</h3>
+      <a href="~/billing/processInvoice">server-relative</a>
+      <h3>http://localhost:8080/webapp/~/billing/processInvoice</h3>
+      <a href="//code.jquery.com/jquery-2.0.3.min.js">protocol-relative</a>
+      <h3>http://code.jquery.com/jquery-2.0.3.min.js</h3>
+    </div>
+    <div>
+    <section th:each="item : ${posts}">
+      <h1>item:</h1>
+      <h2 th:text="${item}"></h2>
+      <h1>ctx:</h1>
+      <h2 th:text="${#ctx}"></h2>
+      <h1>vars:</h1>
+      <h2 th:text="${#vars}"></h2>
+      <h1>locale:</h1>
+      <h2 th:text="${#locale}"></h2>
+      <h1>eh odd?? -></h1>
+      <h2 th:text="${itemStat.odd}"></h2>
+    </section>
+  </div>
   </body>
 </html>
